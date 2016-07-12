@@ -17,7 +17,7 @@
 
 ## Options
 
-```js
+```html
 <script>
 var options = {
   lat: 0, //default latitude
