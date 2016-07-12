@@ -37,8 +37,8 @@
   {
     var latInputVal = document.querySelector(this.options.latInput).value,
         lngInputVal = document.querySelector(this.options.lngInput).value,
-        lat = this.options.lat,
-        lng = this.options.lng;
+        lat = +this.options.lat,
+        lng = +this.options.lng;
 
     if (latInputVal) lat = +latInputVal;
     if (lngInputVal) lng = +lngInputVal;
