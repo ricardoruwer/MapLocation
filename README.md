@@ -6,6 +6,8 @@
 
 ```html
 <div id="map" style="height:400px"></div>
+<input type="text" id="lat">
+<input type="text" id="lng">
 
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 <script src="maplocation.js"></script>
