@@ -29,7 +29,8 @@ var options = {
   title: 'Select the company location.', //the title of marker
   latInput: '#lat', //the input for latitude
   lngInput: '#lng', //the input for longitude
-  activator: false //to load the map clicking in a button, useful when you want to load a map inside tabs or modal (initiated hidden)
+  activator: '#showMap' //default: false
+  //to load the map by clicking in a button, useful when you want to load a map inside tabs or modal (initiated hidden)
 };
 
 var maplocation = new MapLocation('#map', options);
