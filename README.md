@@ -36,3 +36,35 @@ var options = {
 var maplocation = new MapLocation('#map', options);
 </script>
 ```
+
+## Tip
+
+If you have an input for Zip Code on your form you can also add something like:
+
+```html
+<script>
+document.querySelector('input[name=zipcode]').onchange = function () {
+  var zip = this.value.replace('-', ''),
+      url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+zip+'&key=YOUR_API_KEY';
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function ()
+  {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      var response = JSON.parse(xmlhttp.responseText);
+      if (response.status != "OK") return;
+
+      var data = response.results[0].geometry.location;
+      document.querySelector('#lat').value = data.lat;
+      document.querySelector('#lng').value = data.lng;
+
+      document.querySelector('#lat').dispatchEvent(new Event('change'));
+    }
+  }
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+</script>
+```
+
+To put the marker near the place you want.
